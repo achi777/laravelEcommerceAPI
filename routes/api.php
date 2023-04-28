@@ -19,6 +19,7 @@ Route::delete('/categories/{id}', [CategoryController::class, 'destroy']);
 
 // Products
 Route::resource('products',ProductController::class);
+Route::get('/category/{categoryId}/products', [ProductController::class, 'indexByCategory']);
 //Route::get('/products', [ProductController::class, 'index']);
 Route::get('/products/{id}', [ProductController::class, 'show']);
 

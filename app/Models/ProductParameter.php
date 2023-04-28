@@ -9,10 +9,10 @@ class ProductParameter extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name'];
+    protected $fillable = ['name', 'value'];
 
-    public function products()
+    public function product()
     {
-        return $this->belongsToMany(Product::class, 'product_parameter', 'product_parameter_id', 'product_id');
+        return $this->belongsTo(Product::class);
     }
 }
